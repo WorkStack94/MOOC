@@ -14,7 +14,7 @@ $dns = 'mysql:host=localhost;dbname=edxapp';
         return $connection;
 }
 
-function get($connect, $request)
+function get($request)
 {
 $request->execute();
 $row = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -29,38 +29,59 @@ function set($request)
 }
 
 
+
 $log = 'root';
 
 $connect = connect($log);
 
 
-$req1 = $connect->prepare("USE toto");
+$req1 = $connect->prepare("USE edxapp");
 
-set($req1);
+//set($req1);
 
 $req2 = $connect->prepare("INSERT INTO client (prenom, nom, ville, age) VALUES ('Rébecca', 'Armand', 'Saint-Didier-des-Bois', 24), ('Aimée', 'Hebert', 'Marigny-le-Châtel', 36), ('Marielle', 'Ribeiro', 'Maillères', 27),
  ('Hilaire', 'Savary', 'Conie-Molitard', 58)");
 
 
-set($req2);
+//set($req2);
 
 $req3 = $connect->prepare("blabla");
 
-set($req3);
+//set($req3);
 
-/*
-$req4 = "SELECT age, prenom FROM client";
-
-$response = get($connect, $req4);
-
-var_dump($response);
-echo "\n";
-*/
 
 $req5 = $connect->prepare("SELECT age, prenom FROM client");
-$response = get($connect, $req5);
-var_dump($response);
+//$response = get($req5);
+//var_dump($response);
 echo "\n";
+
+
+
+function getCoursesList($adminLog, $connect)
+{
+	$req = $connect->prepare("SELECT DISTINCT course_id FROM student_courseenrollment INNER JOIN auth_user ON student_courseenrollment.USER_id = auth_user.id AND auth_user.username = ?");
+	$req->execute(array($adminLog));
+	return get($req);
+}
+
+$adminLog = "kohl_a";
+
+$res = getCoursesList($adminLog, $connect);
+
+var_dump($res);
+
+
+
+/*
+formatTable(String adminLog, Array course, Array lesson, Array type) // tri successif pas de mise en forme html
+getCoursesList(adminLog)
+getLessonList(adminLog, Array course)
+getUserList(adminLog, Array lesson, Array cours)
+getTypeList()
+
+Si tableau null ca veut dire *
+
+*/
 
 
 ?>
