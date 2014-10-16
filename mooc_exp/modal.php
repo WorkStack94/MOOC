@@ -1,22 +1,9 @@
 <head>
   <title>Mooc Experience</title>
   <meta charset="UTF-8">
-  <!-- library javascript-->
-  <script language="javascript" type="text/javascript" src="asset/lib/jquery-2.1.1.js"></script>
-  <script language="javascript" type="text/javascript" src="asset/bootstrap-dist/js/bootstrap.js"></script>
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  
-  <!-- library css -->
-  <link rel="stylesheet"  href="asset/bootstrap-dist/css/bootstrap.css">
-  <link rel="stylesheet" href="asset/bootstrap-dist/css/bootstrap-theme.css">
-  
-  <!-- my own -->
-  <script type="text/javascript" src="script/script-1.js"></script>
-  <script type="text/javascript" src="script/modal.js"></script>
-  <link rel="stylesheet" href="style/style-1.css">
+    <?php require ('link.php');?>
 </head>
 <body>
-
 <!-- <div><a data-toggle="modal" href="#myModal" class="btn btn-primary">Launch demo modal</a></div> -->
 
     <!-- modal Selection des cours-->

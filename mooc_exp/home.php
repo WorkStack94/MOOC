@@ -3,20 +3,9 @@
 <head>
   <title>Mooc Experience</title>
   <meta charset="UTF-8">
-  <!-- library -->
-  <script language="javascript" type="text/javascript" src="asset/lib/jquery-2.1.1.js"></script>
-  <script language="javascript" type="text/javascript" src="asset/bootstrap-dist/js/bootstrap.js"></script>
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript" src="script/script-1.js"></script>
-  <script type="text/javascript" src="script/chart.js"></script>
-  <script type="text/javascript">
-  	
-  
-  </script>
-  <link rel="stylesheet"  href="asset/bootstrap-dist/css/bootstrap.css">
-  <link rel="stylesheet" href="asset/bootstrap-dist/css/bootstrap-theme.css">
-  <!-- my own -->
-  <link rel="stylesheet" href="style/style-1.css">
+  	<!-- include the css & js link -->
+	<?php require ('link.php');?>
+
 </head>
 
 <body>
@@ -24,6 +13,18 @@
 
 <div class="container">
 	
+<?php
+	$array = array(112,500,66,40);
+
+	$dataMooc = array(
+		[0] => array([0] => 'olivie_c',[1] => 'birout_w'),
+		[1] => array([0] => 'SuperCours',[1] => 'Un Cours'),
+		[2] => array([0] => 'video',[1] => 'texte',[3] => 'exo')
+	);
+
+	// print_r($dataMooc);
+?>
+
 	<!-- ligne 1 Head -->
 	<div class="row">
 		<div class="col-md-2"><img id="logo" src="image/mooc-exp-logo.png"></div>
@@ -62,7 +63,7 @@
 				<h2>Pie Chart</h2>
 				<?php
 				$piChart = new gPieChart();
-				$piChart->addDataSet(array(112,315,66,40));
+				$piChart->addDataSet(array($array[0],$array[1],$array[2],$array[3]));
 				$piChart->setLegend(array("first", "second", "third","fourth"));
 				$piChart->setLabels(array("first", "second", "third","fourth"));
 				$piChart->setColors(array("ff3344", "11ff11", "22aacc", "3333aa"));

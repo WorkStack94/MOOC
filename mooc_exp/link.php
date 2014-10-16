@@ -5,7 +5,8 @@
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script type="text/javascript" src="script/script-1.js"></script>
   <script type="text/javascript" src="script/chart.js"></script>
-
+  <script type="text/javascript" src="script/modal.js"></script>
+  
   <!-- library css -->
   <link rel="stylesheet"  href="asset/bootstrap-dist/css/bootstrap.css">
   <link rel="stylesheet" href="asset/bootstrap-dist/css/bootstrap-theme.css">
