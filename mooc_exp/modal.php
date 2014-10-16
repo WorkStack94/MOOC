@@ -14,11 +14,10 @@
                     <div class="container" style="margin-top:20px;">
                     <div class="col-sm-4 col-sm-offset-1">
                         <div class="list-group" id="list1">
-                        <a href="#" class="list-group-item active">Tout <input title="toggle all" type="checkbox" class="all pull-right"></a>
-                        <a href="#" class="list-group-item">Cours 1 <input type="checkbox" class="pull-right"></a>
-                        <a href="#" class="list-group-item">Cours 2 <input type="checkbox" class="pull-right"></a>
-                        <a href="#" class="list-group-item">Cours 3 <input type="checkbox" class="pull-right"></a>
-                        <a href="#" class="list-group-item">Cours 4 <input type="checkbox" class="pull-right"></a>
+                        <?php
+                            $array = array('Mathematique pour l\'informatique','Pattern Java','Anglais','Corréen "aniang !"');
+                            buildCheckBox($array);
+                        ?> 
                         </div>
                       </div>
                 </div>
@@ -41,11 +40,10 @@
                     <div class="container" style="margin-top:20px;">
                     <div class="col-sm-4 col-sm-offset-1">
                         <div class="list-group" id="list1">
-                        <a href="#" class="list-group-item active">Tout <input title="toggle all" type="checkbox" class="all pull-right"></a>
-                        <a href="#" class="list-group-item">Lesson 1 <input type="checkbox" class="pull-right"></a>
-                        <a href="#" class="list-group-item">Lesson 2 <input type="checkbox" class="pull-right"></a>
-                        <a href="#" class="list-group-item">Lesson 3 <input type="checkbox" class="pull-right"></a>
-                        <a href="#" class="list-group-item">Lesson 4 <input type="checkbox" class="pull-right"></a>
+                        <?php
+                            $array = array('Mathematique pour l\'informatique','Pattern Java','Anglais','Corréen "aniang !"');
+                            buildCheckBox($array);
+                        ?> 
                         </div>
                       </div>
                 </div>
@@ -68,11 +66,10 @@
                     <div class="container" style="margin-top:20px;">
                     <div class="col-sm-4 col-sm-offset-1">
                         <div class="list-group" id="list1">
-                        <a href="#" class="list-group-item active">Tout <input title="toggle all" type="checkbox" class="all pull-right"></a>
-                        <a href="#" class="list-group-item">Type 1 <input type="checkbox" class="pull-right"></a>
-                        <a href="#" class="list-group-item">Type 2 <input type="checkbox" class="pull-right"></a>
-                        <a href="#" class="list-group-item">Type 3 <input type="checkbox" class="pull-right"></a>
-                        <a href="#" class="list-group-item">Type 4 <input type="checkbox" class="pull-right"></a>
+                        <?php
+                            $array = array('Mathematique pour l\'informatique','Pattern Java','Anglais','Corréen "aniang !"');
+                            buildCheckBox($array);
+                        ?> 
                         </div>
                       </div>
                 </div>
@@ -95,11 +92,10 @@
                     <div class="container" style="margin-top:20px;">
                     <div class="col-sm-4 col-sm-offset-1">
                         <div class="list-group" id="list1">
-                        <a href="#" class="list-group-item active">Tout <input title="toggle all" type="checkbox" class="all pull-right"></a>
-                        <a href="#" class="list-group-item">apprenant1 <input type="checkbox" class="pull-right"></a>
-                        <a href="#" class="list-group-item">apprenant2 <input type="checkbox" class="pull-right"></a>
-                        <a href="#" class="list-group-item">apprenant3 <input type="checkbox" class="pull-right"></a>
-                        <a href="#" class="list-group-item">apprenant4 <input type="checkbox" class="pull-right"></a>
+                        <?php
+                            $array = array('Mathematique pour l\'informatique','Pattern Java','Anglais','Corréen "aniang !"');
+                            buildCheckBox($array);
+                        ?> 
                         </div>
                       </div>
                 </div>
