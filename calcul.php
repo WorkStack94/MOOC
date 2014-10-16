@@ -46,7 +46,6 @@
   		$base = 'mysql:host=localhost;dbname=mooc';
   		$user = 'root';
   		$cnx = new PDO($base, $user, null);
-		echo "ok";
 	}
 	catch (Exception $e) {
   	  	echo "Connection à MySQL impossible : " . $e->getMessage();
