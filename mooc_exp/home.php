@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   	<!-- include the css & js link -->
 	<?php require ('link.php');?>
+	<?php require ('function.php');?>
 
 </head>
 
@@ -12,18 +13,6 @@
 <?php include 'include.php';?>
 
 <div class="container">
-	
-<?php
-	$array = array(112,500,66,40);
-
-	$dataMooc = array(
-		[0] => array([0] => 'olivie_c',[1] => 'birout_w'),
-		[1] => array([0] => 'SuperCours',[1] => 'Un Cours'),
-		[2] => array([0] => 'video',[1] => 'texte',[3] => 'exo')
-	);
-
-	// print_r($dataMooc);
-?>
 
 	<!-- ligne 1 Head -->
 	<div class="row">
@@ -63,7 +52,7 @@
 				<h2>Pie Chart</h2>
 				<?php
 				$piChart = new gPieChart();
-				$piChart->addDataSet(array($array[0],$array[1],$array[2],$array[3]));
+				$piChart->addDataSet(array(getData()[0],getData()[1],getData()[2],getData()[3]));
 				$piChart->setLegend(array("first", "second", "third","fourth"));
 				$piChart->setLabels(array("first", "second", "third","fourth"));
 				$piChart->setColors(array("ff3344", "11ff11", "22aacc", "3333aa"));
