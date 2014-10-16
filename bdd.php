@@ -89,13 +89,17 @@ function calculAdherence()
 
 function getIndexAll($admin, $colName)
 {
-	$req = "SELECT DISTINCT " . $colName . " FROM EventUser";
 	$courses = array();
 	$con = connect('root', 'mooc');
-    	foreach($con->query($query) as $row)
-    		echo '<a href="#" class="list-group-item id='.$row[0].'\".> ' . $row[0] . ' <input type="checkbox" class="pull-right"></a>"';
+	$req1 = "SELECT DISTINCT " . $colName . " FROM EventUser";
+    	$req = $con->prepare($req1);
+	$res = get($req);
+	foreach ($res as $row)
+    		echo '<a href="#" class="list-group-item id='.$row[$colName].'\".> ' . $row[$colName] . ' <input type="checkbox" class="pull-right"></a>"'."\n";
     $con = null;
 }
+
+getIndexAll(NULL, "course");
 
 
 //colname-> userId  eventName  dateEvent  course
@@ -142,10 +146,10 @@ $admin = null;
 
 
 
-
-//$users = array("1");
-//$course = array("francais");
-//$type = array("video");;
+/*
+$users = array("1");
+$course = array("francais");
+$type = array("video");;
 $res = getDataMooc($connect, $admin, $users, $course, $type);
 
 
@@ -165,5 +169,5 @@ echo "\n";
 echo 'res : ';
 echo "\n";
 var_dump($res);
-
+*/
 ?>
