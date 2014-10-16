@@ -8,5 +8,6 @@ CREATE TABLE IF NOT EXISTS EventUser (
        userId VARCHAR(30) NOT NULL,
        eventName VARCHAR(30) NOT NULL,
        dateEvent DATE NOT NULL,
-       idEvent VARCHAR(200) NOT NULL
+       idEvent VARCHAR(200) NOT NULL,
+       course VARCHAR(100) NOT NULL
 );
