@@ -9,6 +9,12 @@ var inactif = 0;
 
 $(document).ready(function() {
     document.body.onmousemove = function(event){souris(event);};
+    for (var i = 0; i < document.getElementsByClassName("seq_problem").length; i++)
+    {
+        document.getElementsByClassName("seq_problem")[i].onclick = function(){
+                returnEvent("click_fiche");
+        };
+    }
     startCount();
         
     window.onblur = function() {
@@ -20,6 +26,9 @@ $(document).ready(function() {
 	returnEvent("return_tab");
 	startCount();
     }
+
+    document.getElementsByClassName("seq_problem").onclick = function() { alert("test");};
+
 });
 
 function timedCount() {
@@ -71,14 +80,21 @@ function isActive() {
 function returnEvent(type) {
     var login;
     var login_tmp;
+    var date_format = new Date();
+    var date = date_format.getFullYear() + "-";
+
+    if (date_format.getMonth() < 10)
+	date += "0";
+    date += date_format.getMonth() + "-" + date_format.getDate() + " "
+	+ date_format.getHours() + ":" + date_format.getMinutes() + ":" + date_format.getSeconds();
 
     login_tmp = $(".user-link").html();
     login = login_tmp.split('>');
 
     $.ajax({
 	type: "POST",
-	url: "calcul.php",
-	data: { name: type, date: new Date(), username:  login[login.length - 1].replace(' ','') }
+	url: "push_from_event.php",
+	data: { name: type, date: date, username:  login[login.length - 1].replace(' ','') }
     })
 	.done(function() {
 	    return (true);

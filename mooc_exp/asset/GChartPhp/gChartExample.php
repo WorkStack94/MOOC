@@ -25,7 +25,6 @@ $piChart->setLabels(array("first", "second", "third","fourth"));
 $piChart->setColors(array("ff3344", "11ff11", "22aacc", "3333aa"));
 
 ?>
-<input id="val-first" type="value" value="69" style="display:none">
 
 <img src="<?php print $piChart->getUrl();  ?>" /> <br> pie chart using the gPieChart class.
 <p>

@@ -3,27 +3,17 @@
 <head>
   <title>Mooc Experience</title>
   <meta charset="UTF-8">
-  <!-- library -->
-  <script language="javascript" type="text/javascript" src="asset/lib/jquery-2.1.1.js"></script>
-  <script language="javascript" type="text/javascript" src="asset/bootstrap-dist/js/bootstrap.js"></script>
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript" src="script/script-1.js"></script>
-  <script type="text/javascript" src="script/chart.js"></script>
-  <script type="text/javascript">
-  	
-  
-  </script>
-  <link rel="stylesheet"  href="asset/bootstrap-dist/css/bootstrap.css">
-  <link rel="stylesheet" href="asset/bootstrap-dist/css/bootstrap-theme.css">
-  <!-- my own -->
-  <link rel="stylesheet" href="style/style-1.css">
+  	<!-- include the css & js link -->
+	<?php require ('link.php');?>
+	<?php require ('function.php');?>
+
 </head>
 
 <body>
 <?php include 'include.php';?>
 
 <div class="container">
-	
+
 	<!-- ligne 1 Head -->
 	<div class="row">
 		<div class="col-md-2"><img id="logo" src="image/mooc-exp-logo.png"></div>
@@ -62,7 +52,7 @@
 				<h2>Pie Chart</h2>
 				<?php
 				$piChart = new gPieChart();
-				$piChart->addDataSet(array(112,315,66,40));
+				$piChart->addDataSet(array(getData()[0],getData()[1],getData()[2],getData()[3]));
 				$piChart->setLegend(array("first", "second", "third","fourth"));
 				$piChart->setLabels(array("first", "second", "third","fourth"));
 				$piChart->setColors(array("ff3344", "11ff11", "22aacc", "3333aa"));
