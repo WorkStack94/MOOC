@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   	<!-- include the css & js link -->
 	<?php require ('link.php');?>
-	<?php require ('function.php');?>
+	<?php require ('func.php');?>
 
 </head>
 
@@ -22,7 +22,7 @@
 	   		<div class="navbar-header"><a class="navbar-brand" href="#">Analyseur d'adhérence</a></div>
 	   		<div>
 	      	<p class="navbar-text navbar-right"><img src="asset/bootstrap-dist/glyphicons_free/glyphicons/png/glyphicons_003_user.png">Signed in as <a href="#" class="navbar-link" id="pseudo">Staff </a> |
-	      	<a href="#" class="navbar-link" id="logout"> logout &nbsp&nbsp</a>
+	      	<a href="#" class="navbar-link" id="logout"> logout </a>&nbsp&nbsp
 	      	</p>
 	   		</div>
 			</nav>
@@ -46,23 +46,24 @@
 	<!-- ligne 3 Main -->
 	<div class="row">
 		<div class="col-md-12" id="display">
-			<?php
-				require ('asset/GChartPhp/gChart.php');
-				?>
-				<h2>Pie Chart</h2>
+			<div id="chart-type">
 				<?php
-				$piChart = new gPieChart();
-				$piChart->addDataSet(array(getData()[0],getData()[1],getData()[2],getData()[3]));
-				$piChart->setLegend(array("first", "second", "third","fourth"));
-				$piChart->setLabels(array("first", "second", "third","fourth"));
-				$piChart->setColors(array("ff3344", "11ff11", "22aacc", "3333aa"));
-			?>
+					require ('asset/GChartPhp/gChart.php');
+					?>
+					<h4>Suivie des cours par type</h4>
+					<?php
+					$piChart = new gPieChart();
+					$piChart->addDataSet(getData());
+					$piChart->setLegend(getNameType());
+					$piChart->setLabels(getNameType());
+					$piChart->setColors(array("ff3344", "11ff11", "22aacc", "3333aa"));
+				?>			
+				<img id="img-chart-type" src="<?php print $piChart->getUrl();  ?>" />
+			</div>
 
-			<input id="val-first" type="value" value="69" style="display:none">
-			<img src="<?php print $piChart->getUrl();  ?>" />
 
-			<div class=".col-md-4 chart" id="camembert" ></div>
-			<div class=".col-md-4 chart" id="column" ></div>
+<!-- 			<div class=".col-md-4 chart" id="camembert" ></div>
+			<div class=".col-md-4 chart" id="column" ></div> -->
 		
 		</div>
 	</div>

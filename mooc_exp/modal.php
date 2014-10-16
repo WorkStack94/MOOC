@@ -7,6 +7,8 @@
 <!-- <div><a data-toggle="modal" href="#myModal" class="btn btn-primary">Launch demo modal</a></div> -->
 
     <!-- modal Selection des cours-->
+<form name="input" action="selection.php" method="post">
+
     <div id="modalCourse" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -16,7 +18,7 @@
                         <div class="list-group" id="list1">
                         <?php
                             $array = array('Mathematique pour l\'informatique','Pattern Java','Anglais','Corréen "aniang !"');
-                            buildCheckBox($array);
+                            buildCheckBox('case', $array);
                         ?> 
                         </div>
                       </div>
@@ -24,7 +26,7 @@
                 <div class="modal-footer">
                     <div class="btn-group">
                     <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                    <input class="btn btn-primary" data-dismiss="modal" type="submit">Save changes</input>
                     </div>
                 </div>
             </div><!-- /.modal-content -->
@@ -42,7 +44,7 @@
                         <div class="list-group" id="list1">
                         <?php
                             $array = array('Mathematique pour l\'informatique','Pattern Java','Anglais','Corréen "aniang !"');
-                            buildCheckBox($array);
+                            buildCheckBox('case',$array);
                         ?> 
                         </div>
                       </div>
@@ -50,7 +52,7 @@
                 <div class="modal-footer">
                     <div class="btn-group">
                     <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                    <button class="btn btn-primary" data-dismiss="modal" type="submit">Save changes</button>
                     </div>
                 </div>
             </div><!-- /.modal-content -->
@@ -68,7 +70,7 @@
                         <div class="list-group" id="list1">
                         <?php
                             $array = array('Mathematique pour l\'informatique','Pattern Java','Anglais','Corréen "aniang !"');
-                            buildCheckBox($array);
+                            buildCheckBox('case',$array);
                         ?> 
                         </div>
                       </div>
@@ -76,7 +78,7 @@
                 <div class="modal-footer">
                     <div class="btn-group">
                     <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                    <button class="btn btn-primary" data-dismiss="modal" type="submit">Save changes</button>
                     </div>
                 </div>
             </div><!-- /.modal-content -->
@@ -94,7 +96,7 @@
                         <div class="list-group" id="list1">
                         <?php
                             $array = array('Mathematique pour l\'informatique','Pattern Java','Anglais','Corréen "aniang !"');
-                            buildCheckBox($array);
+                            buildCheckBox('case',$array);
                         ?> 
                         </div>
                       </div>
@@ -102,7 +104,7 @@
                 <div class="modal-footer">
                     <div class="btn-group">
                     <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                    <button class="btn btn-primary" data-dismiss="modal" type="submit">Save changes</button>
                     </div>
                 </div>
             </div><!-- /.modal-content -->
@@ -110,4 +112,5 @@
       </div><!-- /.modal -->
     </div>
 
+</form>
 </body>
