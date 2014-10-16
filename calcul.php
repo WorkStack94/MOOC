@@ -33,10 +33,50 @@
 		$result[$i]["time"] = $time[$i][1][0];
 
 		preg_match_all('#"event":[^:]+:\134"([^\134]+)#', str_replace('/','-', $tab[1][$i]), $id[$i], PREG_PATTERN_ORDER);
-		$tmp = explode('-', $id[$i][1][0]);		
+		$tmp = explode('-', $id[$i][1][0]);
        		$result[$i]["id"] = $tmp[count($tmp) - 1];
 	}
 	echo "<pre>";
 	var_dump($result);
 	echo "</pre>";
-?> 
+
+	// ----------------------------------- RECUPERATION DES DONNEES ----------------------------------- \\
+
+	try {
+  		$base = 'mysql:host=localhost;dbname=mooc';
+  		$user = 'root';
+  		$cnx = new PDO($base, $user, null);
+		echo "ok";
+	}
+	catch (Exception $e) {
+  	  	echo "Connection à MySQL impossible : " . $e->getMessage();
+  		die();
+	}
+
+	$insert = $cnx->prepare('INSERT INTO EventUser VALUES(
+		null, :userId, :eventName, :dateEvent, :idEvent, :course, :currentTime, :success)');
+
+	for ($i = 0; $i < count($result); $i++)
+	{
+		try {
+			$date_event = str_replace('T', ' ', $result[$i]["time"]);
+
+			$success = $insert->execute(array(
+    				'userId' => $result[$i]["username"],
+    				'eventName' => $result[$i]["event_type"],
+				'dateEvent' => $date_event,
+				'idEvent' => $result[$i]["id"],
+				'course' => $result[$i]["course_id"],
+				'currentTime' => $result[$i]["current_time"],
+				'success' => $result[$i]["success"]
+  			));
+			if ($success)
+    				echo "Enregistrement réussi";
+			else
+				echo "Echec de l'enregistrement";
+		}
+		catch (Exception $e) {
+  			echo "Erreur de requète : " . $e->getMessage();
+		}
+	}
+?>
